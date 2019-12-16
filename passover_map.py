@@ -316,7 +316,6 @@ class PassoverMap(object):
 
         return wheel_chairs_per_table
 
-
     def place_everybody(self, order_of_locations_to_place=None):
         """Places guests in tables
         order_of_locations_to_place: a list containing all 4 locations (north, center, dish_washer, close_to_stage)
@@ -349,7 +348,6 @@ class PassoverMap(object):
             # uses dynamic programming
             self.fill_location(tables=tables, guests=optional_guests)"""
 
-
     def dp(self, tables, guests):
         """Uses dynamic programming and returns a matrix corresponding to the following logic:
         rows (index i) are guests, columns (index j) are tables.
@@ -374,7 +372,6 @@ class PassoverMap(object):
 
         # keeping count of how many wheel chairs are in each table
         number_of_wheel_chairs_per_table = np.zeros(shape=(len(tables) + 1,))  # in shape of len(tables) + 1 for convenience, the +1 is not necessary
-
 
         # bottom up approach
         for i in range(1, mat.shape[0]):
@@ -490,7 +487,6 @@ class PassoverMap(object):
                 break  # we're done
 
         self.replace_group_number_with_guest_name()  # replaces group number to the group guests names
-
 
 
 def run(tables, guests, groups, save_map=True):
